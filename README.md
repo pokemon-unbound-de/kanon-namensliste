@@ -55,6 +55,24 @@ Die genutzten Seitensnapshots liegen unter [`cache/`](cache/)
   ausgelassen.
 - Renaming-Marker (`*` für alte Namen) werden gestrichen; es gilt der
   aktuelle offizielle Name.
+- **Offizielle Namens-Kollisionen Attacke/Fähigkeit** (gleicher
+  DE-Name für zwei offizielle Namen, `typ` unterscheidet):
+  `Kraftkoloss` (Superpower / Huge Power), `Sandsturm` (Sandstorm /
+  Sand Stream), `Schnüffler` (Odor Sleuth / Frisk). Die
+  PokéWiki-Artikel der Fähigkeiten tragen den Titel-Suffix
+  „(Fähigkeit)" (Disambiguierung) — dieser wurde aus der `de`-Spalte
+  gestrichen, die `quelle`-URL verlinkt weiterhin den Artikel.
+
+## Lizenz
+
+Namen und Daten stammen von **PokéWiki** (pokewiki.de) und
+**Bulbapedia** (bulbapedia.bulbagarden.net) und unterliegen
+**CC BY-NC-SA 4.0** (PokéWiki: [Lizenzhinweis](https://www.pokewiki.de/Pok%C3%A9Wiki:Urheberrecht),
+Bulbapedia: [Lizenz](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)):
+Namensnutzung nur nicht-kommerziell, Weitergabe unter gleicher Lizenz,
+Angabe der Quelle. Diese Liste und ihre Snapshots unter `cache/` sind
+dementsprechend **CC BY-NC-SA 4.0**; die `quelle`-Spalte gibt die
+genutzten Artikel an.
 
 ## Reproduktion
 

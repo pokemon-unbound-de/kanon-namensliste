@@ -194,7 +194,12 @@ def parse_fähigkeiten() -> list[dict]:
             print(f"! Fähigkeit {fields[0]}: kein Link: {fields[1]!r}",
                   file=sys.stderr)
             continue
-        out.append({"num": int(m.group(1)), "de": de_link.group(1).strip(),
+        de = de_link.group(1).strip()
+        # Disambiguierungs-Suffix im Artikel-Titel (z. B. "Sandsturm
+        # (Fähigkeit)" gegen die Attacke "Sandsturm") aus dem Namen
+        # streichen; der Link/URL behält ihn (zeigt auf den Artikel).
+        de = re.sub(r"\s*\(Fähigkeit\)$", "", de)
+        out.append({"num": int(m.group(1)), "de": de,
                     "en": fields[2].strip(),
                     "link": de_link.group(1).strip()})
     return out
