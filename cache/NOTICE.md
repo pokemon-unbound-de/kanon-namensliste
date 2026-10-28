@@ -1,14 +1,20 @@
 # Quellen-Snapshots — Lizenz
 
 Diese Dateien sind Seitensnapshots (2026-10-27) von **PokéWiki**
-(pokewiki.de) und **Bulbapedia** (bulbapedia.bulbagarden.net) und
-unterliegen **CC BY-NC-SA 4.0**:
+(pokewiki.de) und **Bulbapedia** (bulbapedia.bulbagarden.net).
+Lizenz je Quelle:
 
-- `*.json` — PokéWiki-wikitext (via MediaWiki-API)
-- `bp_*.html` — Bulbapedia-HTML
+- `*.json` — PokéWiki-wikitext (via MediaWiki-API):
+  **CC BY-NC-SA 4.0**
+- `bp_*.html` — Bulbapedia-HTML: **CC BY-NC-SA 2.5**
+  (offizielle Bulbapedia-Aussage, [Bulbapedia:Copyrights](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights),
+  am 2026-10-28 per Web-Prüfung verifiziert: Artikel, die nach
+  2007-04-15 erstellt/bearbeitet wurden, sind unter CC BY-NC-SA 2.5
+  lizenziert; ältere Revisionsstände unter 2.0; aus Wikipedia
+  übernommene Artikel unter der GNU-FDL)
 
-**Nutzung:** nur nicht-kommerziell, Weitergabe unter gleicher Lizenz
-(CC BY-NC-SA 4.0), Quellenangabe erforderlich. Verwendete Artikel:
+**Nutzung:** nur nicht-kommerziell, Weitergabe unter der jeweils
+geltenden Lizenz, Quellenangabe erforderlich. Verwendete Artikel:
 
 | Datei | Artikel |
 |---|---|
