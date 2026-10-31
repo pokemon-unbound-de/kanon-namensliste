@@ -4,7 +4,8 @@ Offizielle deutsche und englische Namen für **Pokémon, Attacken,
 Fähigkeiten und Items** der Hauptspiel-Generationen 1–9 inkl. aktueller
 Zusätze (Stand 2026-10-27). Auftrag: [pokemon-unbound-de#39](https://github.com/pokemon-unbound-de/pokemon-unbound-de/issues/39).
 
-Namen sind **keine Spieltexte** → die Liste darf öffentlich sein.
+Die Liste enthält Namen und Quellenverweise, keine Dialogtexte.
+Die Quellen- und Lizenzhinweise für die Daten stehen unten.
 
 ## Format
 
@@ -62,17 +63,26 @@ Die genutzten Seitensnapshots liegen unter [`cache/`](cache/)
   PokéWiki-Artikel der Fähigkeiten tragen den Titel-Suffix
   „(Fähigkeit)" (Disambiguierung) — dieser wurde aus der `de`-Spalte
   gestrichen, die `quelle`-URL verlinkt weiterhin den Artikel.
+  Insgesamt betraf die Suffixkorrektur vier Fähigkeiten: Familienbande,
+  Kraftkoloss, Sandsturm und Schnüffler. Die Artikel-URLs behalten den Zusatz.
 
 ## Lizenz
 
-Namen und Daten stammen von **PokéWiki** (pokewiki.de) und
-**Bulbapedia** (bulbapedia.bulbagarden.net) und unterliegen
-**CC BY-NC-SA 4.0** (PokéWiki: [Lizenzhinweis](https://www.pokewiki.de/Pok%C3%A9Wiki:Urheberrecht),
-Bulbapedia: [Lizenz](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)):
-Namensnutzung nur nicht-kommerziell, Weitergabe unter gleicher Lizenz,
-Angabe der Quelle. Diese Liste und ihre Snapshots unter `cache/` sind
-dementsprechend **CC BY-NC-SA 4.0**; die `quelle`-Spalte gibt die
-genutzten Artikel an.
+Die Daten stammen von **PokéWiki** und **Bulbapedia**. Ihre Quellenlizenzen
+werden getrennt ausgewiesen, entsprechend [`cache/NOTICE.md`](cache/NOTICE.md):
+
+| Quelle | Lizenz der verwendeten Quellenbestände | Hinweis |
+|---|---|---|
+| PokéWiki | CC BY-NC-SA 4.0 | [Quellenhinweis](https://www.pokewiki.de/Pok%C3%A9Wiki:Urheberrecht) |
+| Bulbapedia | CC BY-NC-SA 2.5 | [Offizielle Copyrights-Seite](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights); die dort erläuterten Sonderfälle bleiben zu beachten |
+
+Die Zusammenstellung erklärt die unterschiedlichen Quellenbestandteile
+**nicht pauschal zu CC BY-NC-SA 4.0**. Die `quelle`-Spalte verlinkt den jeweils
+verwendeten Artikel; die Snapshot-Zuordnung steht in `cache/NOTICE.md`.
+Bearbeitungen dieser Liste: Tabellen zusammengeführt, Namen normalisiert,
+Mehrfachzeilen nach den oben beschriebenen Regeln behandelt und die vier
+Fähigkeits-Artikelsuffixe aus dem Anzeigenamen entfernt. Quellen-URLs bleiben
+erhalten. Bei Weitergabe die jeweilige Quellenangabe und Lizenz mitführen.
 
 ## Reproduktion
 
