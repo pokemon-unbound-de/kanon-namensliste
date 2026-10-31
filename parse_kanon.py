@@ -209,6 +209,31 @@ def parse_fähigkeiten() -> list[dict]:
 # Merge + Ausgabe
 # --------------------------------------------------------------------------
 
+def apply_generation_names(rows, rules):
+    """Apply pinned renamings by exact type/EN; retain historical aliases.
+
+    This does not approve either spelling for a particular ROM or slot.
+    """
+    result = [list(row) for row in rows]
+    aliases = []
+    seen = set()
+    for rule in rules:
+        key = (rule['typ'], rule['en'])
+        if key in seen:
+            raise ValueError('duplicate generation rule: ' + repr(key))
+        seen.add(key)
+        matches = [r for r in result if tuple(r[:2]) == key]
+        if len(matches) != 1:
+            raise ValueError('generation rule needs exactly one name: ' + repr(key))
+        row = matches[0]
+        if row[2] not in (rule['legacy_de'], rule['current_de']):
+            raise ValueError('unexpected source spelling: ' + repr(key))
+        row[2], row[3] = rule['current_de'], rule['source']
+        aliases.append([*key, rule['legacy_de'], rule['legacy_generations'],
+                        rule['current_de'], rule['current_from_generation'], rule['source']])
+    return result, aliases
+
+
 def main() -> int:
     pokedex = parse_pokedex()
     attacken = parse_attacken()
@@ -317,6 +342,13 @@ def main() -> int:
                      BP_BASE + quote(r["en_title"], safe="")])
     stats["item"] = len(seen_en)
 
+    rules = json.loads(read(ROOT / 'generation_names.json'))
+    rows, aliases = apply_generation_names(rows, rules)
+    with open(ROOT / 'kanon_aliases.csv', 'w', encoding='utf-8', newline='') as fh:
+        writer = csv.writer(fh, delimiter=';')
+        writer.writerow(['typ', 'en', 'de_alias', 'alias_generationen',
+                         'de_aktuell', 'aktuell_ab_generation', 'quelle'])
+        writer.writerows(aliases)
     rows.sort(key=lambda r: (r[0], r[2].casefold(), r[1].casefold()))
     out_csv = ROOT / "kanon_namen.csv"
     with open(out_csv, "w", encoding="utf-8", newline="") as fh:

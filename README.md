@@ -20,6 +20,18 @@ Die Quellen- und Lizenzhinweise für die Daten stehen unten.
 
 ## Umfang (3.273 Zeilen)
 
+Zwei gezielt belegte Generationswechsel stehen in `generation_names.json`:
+Choice Specs heißt ab Generation VIII **Wahlbrille** (zuvor Wahlglas), Glare
+**Schlangenblick** (zuvor Giftblick). Die Hauptliste liefert die aktuellen
+Namen; `kanon_aliases.csv` erhält die zwei alten Fassungen mit ihrem
+Generationsbereich und gepinnter Quellenrevision. Der Parser wendet diese
+Ergänzungen bei jedem Neulauf auf die exakte Kombination aus `typ` und `en`
+an. Andere Namensänderungen sind damit nicht erschöpfend untersucht.
+Alte Namen sind historische Aliasse, keine automatische Freigabe für einen
+aktuellen ROM-Slot. Bytegrenze und Projektentscheidung bleiben separat.
+
+Prüfung: `python3 -m unittest test_generation_names -v` (fünf Gegenproben).
+
 | typ | Anzahl | Quelle |
 |---|---|---|
 | `pokémon` | 1.025 | PokéWiki „Pokémon-Liste" (Nationaler Pokédex bis #1025; „Braubel" ohne Nummer ausgelassen) |
