@@ -1,0 +1,83 @@
+[
+  {
+    "typ": "item",
+    "en": "Choice Specs",
+    "current_de": "Wahlbrille",
+    "current_from_generation": 8,
+    "legacy_de": "Wahlglas",
+    "legacy_generations": "4-7",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Choice_Specs&oldid=4647077"
+  },
+  {
+    "typ": "attacke",
+    "en": "Glare",
+    "current_de": "Schlangenblick",
+    "current_from_generation": 8,
+    "legacy_de": "Giftblick",
+    "legacy_generations": "1-7",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Glare_(move)&oldid=4646494"
+  },
+  {
+    "typ": "item",
+    "en": "Focus Band",
+    "current_de": "Fokusband",
+    "current_from_generation": 8,
+    "legacy_de": "Fokus-Band",
+    "legacy_generations": "2-7",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Focus_Band&oldid=4635265"
+  },
+  {
+    "typ": "item",
+    "en": "Twisted Spoon",
+    "current_de": "Krummlöffel",
+    "current_from_generation": 4,
+    "legacy_de": "Krümmlöffel",
+    "legacy_generations": "2-3",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Twisted_Spoon&oldid=4636355"
+  },
+  {
+    "typ": "item",
+    "en": "Lagging Tail",
+    "current_de": "Schwerschweif",
+    "current_from_generation": 7,
+    "legacy_de": "Schwerschwf.",
+    "legacy_generations": "4-6",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Lagging_Tail&oldid=4590199"
+  },
+  {
+    "typ": "fähigkeit",
+    "en": "Own Tempo",
+    "current_de": "Gleichmut",
+    "current_from_generation": 9,
+    "legacy_de": "Tempomacher",
+    "legacy_generations": "3-8",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Own_Tempo_(Ability)&oldid=4534274"
+  },
+  {
+    "typ": "fähigkeit",
+    "en": "Poison Heal",
+    "current_de": "Giftheilung",
+    "current_from_generation": 9,
+    "legacy_de": "Aufheber",
+    "legacy_generations": "4-8",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Poison_Heal_(Ability)&oldid=4547772"
+  },
+  {
+    "typ": "fähigkeit",
+    "en": "Tangled Feet",
+    "current_de": "Taumelschritt",
+    "current_from_generation": 9,
+    "legacy_de": "Fußangel",
+    "legacy_generations": "4-8",
+    "source": "https://bulbapedia.bulbagarden.net/w/index.php?title=Tangled_Feet_(Ability)&oldid=4634073"
+  },
+  {
+    "typ": "fähigkeit",
+    "en": "Symbiosis",
+    "current_de": "Symbiose",
+    "current_from_generation": 9,
+    "legacy_de": "Nutznießer",
+    "legacy_generations": "6-8",
+    "source": "https://www.bisafans.de/spiele/editionen/karmesin-purpur/aenderungen.php"
+  }
+]

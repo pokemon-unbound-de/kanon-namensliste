@@ -4,7 +4,8 @@ Offizielle deutsche und englische Namen für **Pokémon, Attacken,
 Fähigkeiten und Items** der Hauptspiel-Generationen 1–9 inkl. aktueller
 Zusätze (Stand 2026-10-27). Auftrag: [pokemon-unbound-de#39](https://github.com/pokemon-unbound-de/pokemon-unbound-de/issues/39).
 
-Namen sind **keine Spieltexte** → die Liste darf öffentlich sein.
+Die Liste enthält Namen und Quellenverweise, keine Dialogtexte.
+Die Quellen- und Lizenzhinweise für die Daten stehen unten.
 
 ## Format
 
@@ -18,6 +19,18 @@ Namen sind **keine Spieltexte** → die Liste darf öffentlich sein.
 | `quelle` | Artikel-URL der Quelle für diese Zeile |
 
 ## Umfang (3.273 Zeilen)
+
+Zwei gezielt belegte Generationswechsel stehen in `generation_names.json`:
+Choice Specs heißt ab Generation VIII **Wahlbrille** (zuvor Wahlglas), Glare
+**Schlangenblick** (zuvor Giftblick). Die Hauptliste liefert die aktuellen
+Namen; `kanon_aliases.csv` erhält die zwei alten Fassungen mit ihrem
+Generationsbereich und gepinnter Quellenrevision. Der Parser wendet diese
+Ergänzungen bei jedem Neulauf auf die exakte Kombination aus `typ` und `en`
+an. Andere Namensänderungen sind damit nicht erschöpfend untersucht.
+Alte Namen sind historische Aliasse, keine automatische Freigabe für einen
+aktuellen ROM-Slot. Bytegrenze und Projektentscheidung bleiben separat.
+
+Prüfung: `python3 -m unittest test_generation_names -v` (fünf Gegenproben).
 
 | typ | Anzahl | Quelle |
 |---|---|---|
@@ -62,17 +75,26 @@ Die genutzten Seitensnapshots liegen unter [`cache/`](cache/)
   PokéWiki-Artikel der Fähigkeiten tragen den Titel-Suffix
   „(Fähigkeit)" (Disambiguierung) — dieser wurde aus der `de`-Spalte
   gestrichen, die `quelle`-URL verlinkt weiterhin den Artikel.
+  Insgesamt betraf die Suffixkorrektur vier Fähigkeiten: Familienbande,
+  Kraftkoloss, Sandsturm und Schnüffler. Die Artikel-URLs behalten den Zusatz.
 
 ## Lizenz
 
-Namen und Daten stammen von **PokéWiki** (pokewiki.de) und
-**Bulbapedia** (bulbapedia.bulbagarden.net) und unterliegen
-**CC BY-NC-SA 4.0** (PokéWiki: [Lizenzhinweis](https://www.pokewiki.de/Pok%C3%A9Wiki:Urheberrecht),
-Bulbapedia: [Lizenz](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights)):
-Namensnutzung nur nicht-kommerziell, Weitergabe unter gleicher Lizenz,
-Angabe der Quelle. Diese Liste und ihre Snapshots unter `cache/` sind
-dementsprechend **CC BY-NC-SA 4.0**; die `quelle`-Spalte gibt die
-genutzten Artikel an.
+Die Daten stammen von **PokéWiki** und **Bulbapedia**. Ihre Quellenlizenzen
+werden getrennt ausgewiesen, entsprechend [`cache/NOTICE.md`](cache/NOTICE.md):
+
+| Quelle | Lizenz der verwendeten Quellenbestände | Hinweis |
+|---|---|---|
+| PokéWiki | CC BY-NC-SA 4.0 | [Quellenhinweis](https://www.pokewiki.de/Pok%C3%A9Wiki:Urheberrecht) |
+| Bulbapedia | CC BY-NC-SA 2.5 | [Offizielle Copyrights-Seite](https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Copyrights); die dort erläuterten Sonderfälle bleiben zu beachten |
+
+Die Zusammenstellung erklärt die unterschiedlichen Quellenbestandteile
+**nicht pauschal zu CC BY-NC-SA 4.0**. Die `quelle`-Spalte verlinkt den jeweils
+verwendeten Artikel; die Snapshot-Zuordnung steht in `cache/NOTICE.md`.
+Bearbeitungen dieser Liste: Tabellen zusammengeführt, Namen normalisiert,
+Mehrfachzeilen nach den oben beschriebenen Regeln behandelt und die vier
+Fähigkeits-Artikelsuffixe aus dem Anzeigenamen entfernt. Quellen-URLs bleiben
+erhalten. Bei Weitergabe die jeweilige Quellenangabe und Lizenz mitführen.
 
 ## Reproduktion
 
@@ -84,3 +106,21 @@ Deterministisch, offline (nur `cache/`), Python 3.9+ ohne Zusatzpakete.
 Erstellt `kanon_namen.csv` neu und gibt Count-Report, DE-Duplikate und
 Quell-Abweichungen aus. Bei Quellen-Update: Snapshots in `cache/`
 ersetzen (URLs oben), dann neu ausführen.
+
+
+## CX076: elf angefragte Namen und Generationsgrenzen
+
+Vier weitere aktuelle Itemnamen korrigiert, vier Gen-IX-Fähigkeitsnamen
+bewusst erhalten, drei Namen unverändert bestätigt. Die vollständige
+Einzelprüfung samt Quellenkonflikt bei Symbiosis und HTTP403-Grenze steht
+in [CX076_KANONPRUEFUNG.md](CX076_KANONPRUEFUNG.md).
+Neun historische Aliase stehen getrennt in kanon_aliases.csv; Tippfehler
+werden nicht zu offiziellen Altformen erklärt. Zwei strikte Quellkorrekturen
+in name_corrections.json und die bestehenden Generationsregeln werden bei
+jedem Offlinegeneratorlauf angewandt. Neu kuratierte Metadaten zitieren
+Bulbapedia-Einzelseiten und für Symbiosis die Gen-IX-Umbenennungsliste von
+Bisafans, zusätzlich zum vorhandenen PokéWiki-Listensnapshot. Kein neu
+gescrapter Textbestand oder pauschaler Lizenzwechsel der Quellen.
+
+Die Liste ist kein Beweis, dass ein Name in einen konkreten ROM-Slot passt.
+Aktuelle Namen und alte offizielle Alternativen bleiben für I1 getrennt.
