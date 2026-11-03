@@ -209,6 +209,25 @@ def parse_fähigkeiten() -> list[dict]:
 # Merge + Ausgabe
 # --------------------------------------------------------------------------
 
+def apply_name_corrections(rows, corrections):
+    """Fix exact, reviewed source errors without inventing historical aliases."""
+    result = [list(row) for row in rows]
+    seen = set()
+    for rule in corrections:
+        key = (rule['typ'], rule['en'])
+        if key in seen:
+            raise ValueError('duplicate name correction: ' + repr(key))
+        seen.add(key)
+        matches = [row for row in result if tuple(row[:2]) == key]
+        if len(matches) != 1:
+            raise ValueError('name correction needs exactly one identity: ' + repr(key))
+        row = matches[0]
+        if row[2] not in (rule['source_de'], rule['correct_de']):
+            raise ValueError('unexpected source spelling: ' + repr(key))
+        row[2], row[3] = rule['correct_de'], rule['source']
+    return result
+
+
 def apply_generation_names(rows, rules):
     """Apply pinned renamings by exact type/EN; retain historical aliases.
 
@@ -342,6 +361,7 @@ def main() -> int:
                      BP_BASE + quote(r["en_title"], safe="")])
     stats["item"] = len(seen_en)
 
+    rows = apply_name_corrections(rows, json.loads(read(ROOT / 'name_corrections.json')))
     rules = json.loads(read(ROOT / 'generation_names.json'))
     rows, aliases = apply_generation_names(rows, rules)
     with open(ROOT / 'kanon_aliases.csv', 'w', encoding='utf-8', newline='') as fh:

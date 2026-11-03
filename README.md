@@ -106,3 +106,21 @@ Deterministisch, offline (nur `cache/`), Python 3.9+ ohne Zusatzpakete.
 Erstellt `kanon_namen.csv` neu und gibt Count-Report, DE-Duplikate und
 Quell-Abweichungen aus. Bei Quellen-Update: Snapshots in `cache/`
 ersetzen (URLs oben), dann neu ausführen.
+
+
+## CX076: elf angefragte Namen und Generationsgrenzen
+
+Vier weitere aktuelle Itemnamen korrigiert, vier Gen-IX-Fähigkeitsnamen
+bewusst erhalten, drei Namen unverändert bestätigt. Die vollständige
+Einzelprüfung samt Quellenkonflikt bei Symbiosis und HTTP403-Grenze steht
+in [CX076_KANONPRUEFUNG.md](CX076_KANONPRUEFUNG.md).
+Neun historische Aliase stehen getrennt in kanon_aliases.csv; Tippfehler
+werden nicht zu offiziellen Altformen erklärt. Zwei strikte Quellkorrekturen
+in name_corrections.json und die bestehenden Generationsregeln werden bei
+jedem Offlinegeneratorlauf angewandt. Neu kuratierte Metadaten zitieren
+Bulbapedia-Einzelseiten und für Symbiosis die Gen-IX-Umbenennungsliste von
+Bisafans, zusätzlich zum vorhandenen PokéWiki-Listensnapshot. Kein neu
+gescrapter Textbestand oder pauschaler Lizenzwechsel der Quellen.
+
+Die Liste ist kein Beweis, dass ein Name in einen konkreten ROM-Slot passt.
+Aktuelle Namen und alte offizielle Alternativen bleiben für I1 getrennt.

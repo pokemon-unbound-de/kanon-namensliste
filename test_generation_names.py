@@ -12,6 +12,8 @@ class GenerationNamesTest(unittest.TestCase):
                      ['attacke', 'Glare', 'Schlangenblick', 'already current'],
                      ['item', 'Unrelated', 'Wahlglas', 'unrelated'],
                      ['item', 'Focus Band', 'Fokus-Band', 'old']]
+        self.rows.extend([[r['typ'], r['en'], r['legacy_de'], 'old']
+                          for r in self.rules[3:]])
 
     def test_current_and_legacy_are_separate_and_idempotent(self):
         before = copy.deepcopy(self.rows)
