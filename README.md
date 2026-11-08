@@ -1,5 +1,7 @@
 # Kanon-Namensliste (offizielle DE/EN-Namen, Gen 1–9)
 
+> **English:** Official German and English names of Pokémon, moves, abilities and items (generations 1–9) in one CSV with a source URL per row. Names are not game text, so the list is public.
+
 Offizielle deutsche und englische Namen für **Pokémon, Attacken,
 Fähigkeiten und Items** der Hauptspiel-Generationen 1–9 inkl. aktueller
 Zusätze (Stand 2026-10-27). Auftrag: [pokemon-unbound-de#39](https://github.com/pokemon-unbound-de/pokemon-unbound-de/issues/39).
